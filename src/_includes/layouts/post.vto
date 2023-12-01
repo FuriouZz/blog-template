@@ -49,6 +49,9 @@ bodyClass: body-post
   </aside>
   {{ /if }}
 
+  {{ if it.comments_provider === "giscus" }}
+  <div class="giscus"></div>
+  {{ else }}
   {{ if it.comments?.src }}
   <aside class="comments-section">
     <header class="comments-header">
@@ -58,8 +61,9 @@ bodyClass: body-post
     <mastodon-comments src="{{ it.comments.src }}" cache="{{ it.comments.cache ?? 60 }}" class="comments">
       {{ i18n.comments.empty }}
     </mastodon-comments>
-  {{ /if }}
   </aside>
+  {{ /if }}
+  {{ /if }}
 </article>
 
 <nav class="page-pagination pagination">
@@ -85,3 +89,46 @@ bodyClass: body-post
     {{ /if }}
   </ul>
 </nav>
+
+{{ if it.comments_provider === "giscus" && it.giscus }}
+<script src="https://giscus.app/client.js"
+  {{ if it.giscus['repo'] }}
+  data-repo="{{ it.giscus['repo'] }}"
+  {{ /if }}
+  {{ if it.giscus['repo-id'] }}
+  data-repo-id="{{ it.giscus['repo-id'] }}"
+  {{ /if }}
+  {{ if it.giscus['category'] }}
+  data-category="{{ it.giscus['category'] }}"
+  {{ /if }}
+  {{ if it.giscus['category-id'] }}
+  data-category-id="{{ it.giscus['category-id'] }}"
+  {{ /if }}
+  {{ if it.giscus['mapping'] }}
+  data-mapping="{{ it.giscus['mapping'] }}"
+  {{ /if }}
+  {{ if it.giscus['strict'] }}
+  data-strict="{{ it.giscus['strict'] }}"
+  {{ /if }}
+  {{ if it.giscus['reactions-enabled'] }}
+  data-reactions-enabled="{{ it.giscus['reactions-enabled'] }}"
+  {{ /if }}
+  {{ if it.giscus['emit-metadata'] }}
+  data-emit-metadata="{{ it.giscus['emit-metadata'] }}"
+  {{ /if }}
+  {{ if it.giscus['input-position'] }}
+  data-input-position="{{ it.giscus['input-position'] }}"
+  {{ /if }}
+  {{ if it.giscus['theme'] }}
+  data-theme="{{ it.giscus['theme'] }}"
+  {{ /if }}
+  {{ if it.giscus['lang'] }}
+  data-lang="{{ it.giscus['lang'] }}"
+  {{ /if }}
+  {{ if it.giscus['loading'] }}
+  data-loading="{{ it.giscus['loading'] }}"
+  {{ /if }}
+  crossorigin="anonymous"
+  async>
+</script>
+{{ /if }}
