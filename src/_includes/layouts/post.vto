@@ -50,6 +50,7 @@ bodyClass: body-post
   {{ /if }}
 
   {{ if it.comments_provider === "giscus" }}
+  <hr />
   <div class="giscus"></div>
   {{ else }}
   {{ if it.comments?.src }}
