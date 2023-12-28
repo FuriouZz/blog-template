@@ -1,7 +1,7 @@
 import date, { Options as DateOptions } from "lume/plugins/date.ts";
 import postcss from "lume/plugins/postcss.ts";
 import terser from "lume/plugins/terser.ts";
-import prism, { Options as PrismOptions } from "lume/plugins/prism.ts";
+// import prism, { Options as PrismOptions } from "lume/plugins/prism.ts";
 import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
@@ -17,7 +17,7 @@ import footnotes from "https://deno.land/x/lume_markdown_plugins@v0.7.0/footnote
 import "lume/types.ts";
 
 export interface Options {
-  prism?: Partial<PrismOptions>;
+  // prism?: Partial<PrismOptions>;
   date?: Partial<DateOptions>;
   pagefind?: Partial<PagefindOptions>;
 }
@@ -28,7 +28,7 @@ export default function (options: Options = {}) {
     site.use(postcss())
       .use(basePath())
       .use(toc())
-      .use(prism(options.prism))
+      // .use(prism(options.prism))
       .use(readingInfo())
       .use(date(options.date))
       .use(metas())
