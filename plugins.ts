@@ -10,9 +10,9 @@ import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import feed from "lume/plugins/feed.ts";
 import readingInfo from "lume/plugins/reading_info.ts";
-import toc from "https://deno.land/x/lume_markdown_plugins@v0.5.1/toc.ts";
-import image from "https://deno.land/x/lume_markdown_plugins@v0.5.1/image.ts";
-import footnotes from "https://deno.land/x/lume_markdown_plugins@v0.5.1/footnotes.ts";
+import toc from "https://deno.land/x/lume_markdown_plugins@v0.7.0/toc.ts";
+import image from "https://deno.land/x/lume_markdown_plugins@v0.7.0/image.ts";
+import footnotes from "https://deno.land/x/lume_markdown_plugins@v0.7.0/footnotes.ts";
 
 import "lume/types.ts";
 
@@ -64,7 +64,7 @@ export default function (options: Options = {}) {
     // Basic CSS Design System
     site.remoteFile(
       "_includes/css/ds.css",
-      "https://unpkg.com/@lumeland/ds@0.3.2/ds.css",
+      "https://unpkg.com/@lumeland/ds@0.3.3/ds.css",
     );
 
     // Mastodon comment system
