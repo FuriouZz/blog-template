@@ -28,6 +28,7 @@ export default function (options: Partial<Options> = {}) {
       "_includes/layouts/post.vto",
       "_includes/templates/post-details.vto",
       "_includes/templates/post-list.vto",
+      "_includes/templates/post-giscus.vto",
       "fonts/inter.woff2",
       "fonts/inter-italic.woff2",
       "fonts/epilogue-bold.woff2",
