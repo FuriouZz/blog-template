@@ -18,7 +18,10 @@ search:
 comments:
   title: Comments
   description: |
-    Please, do not hesitate to leave a comment or send me a private message @furiouzz.
+    You can leave a comment by replying to
+    <a href="#" target="_blank" data-giscus-discussion>this Github discussion</a>
+    from your own account on Github or send me a private message
+     <a href="https://twitter.com/furiouzz" target="_blank">@furiouzz</a> on Twitter.
   # description: |
   #   You can leave a comment by replying to <a href=":src:">this Mastodon post</a> from your own account on Mastodon or any other ActivityPub-capable social network that can exchange replies with Mastodon.
   empty: No comments yet

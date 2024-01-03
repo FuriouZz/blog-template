@@ -49,13 +49,14 @@ bodyClass: body-post
   </aside>
   {{ /if }}
 
-  {{ if it.comments_provider === "giscus" && it.giscus }}
   <hr />
+  {{ if it.comments_provider === "giscus" && it.giscus }}
   <aside class="comments-section">
     <header class="comments-header">
       <h2>{{ i18n.comments.title }}</h2>
       <p>{{ i18n.comments.description }}</p>
     </header>
+    <br />
     <div class="giscus"></div>
     {{ include "templates/post-giscus.vto" { giscus: it.giscus } }}
   </aside>
